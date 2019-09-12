@@ -2,9 +2,10 @@ import React, {Component} from 'react'
 import {Button, Modal, ModalHeader, ModalBody } from 'reactstrap'
 import AddEditForm from '../Forms/AddEditForm'
 
-class Modal extends Component {
+
+class ModalForm extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             modal:false
         }
@@ -14,21 +15,21 @@ class Modal extends Component {
             modal: !prevState.modal
 
         }))
-    }
+    };
     render() {
-        const  closeBtn =<button className="close" onClick={this.toggle}>&time; </button>
+        const  closeBtn =<button className="close" onClick={this.toggle}>&time; </button>;
 
-        const label = this.props.buttonLabel
+        const label = this.props.buttonLabel;
 
-        let button =''
-        let title =''
+        let button ='';
+        let title ='';
 
         if(label ==='Edit') {
             button = <Button
                 color="warning"
                 onClick={this.toggle}
                 style={{float: "left", marginRight: "10px"}}> {label}
-            </Button>
+            </Button>;
 
             title = 'Edit Item'
         }else {
@@ -36,7 +37,7 @@ class Modal extends Component {
                 color="success"
                 onClick={this.toggle}
                 style={{float: "left", marginRight:"10px"}} >{label}
-            </Button>
+            </Button>;
             title = 'Add New Item'
         }
 
@@ -59,3 +60,4 @@ class Modal extends Component {
 
 
 }
+export default Modal

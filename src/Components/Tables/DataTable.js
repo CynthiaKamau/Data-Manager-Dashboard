@@ -5,7 +5,7 @@ import ModalForm from '../Modals/Modal'
 class DataTable extends Component{
 
     deleteItem = id=> {
-        let confirmDelete = window.confirm('Delete item forever?')
+        let confirmDelete = window.confirm('Delete item forever?');
         if (confirmDelete){
             fetch('http://localhost:3000/crud',{
             method: 'delete',
@@ -22,7 +22,7 @@ class DataTable extends Component{
         })
         .catch(err => console.log(err))
     }
-    }
+    };
     render() {
         const items = this.props.items.map(item => {
             return (
@@ -49,7 +49,7 @@ class DataTable extends Component{
                     </td>
                 </tr>
             )
-        })
+        });
 
         return (
             <Table responsive hover>

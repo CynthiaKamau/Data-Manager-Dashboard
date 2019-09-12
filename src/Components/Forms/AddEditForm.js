@@ -15,14 +15,14 @@ class AddEditForm extends React.Component{
         project:'',
         responsible_personel: '',
         box_barcode:''
-    }
+    };
 
     onChange = e => {
         this.setState({[e.target.name]: e.target.value})
-    }
+    };
 
     submitFormAdd = e => {
-        e.preventDefault()
+        e.preventDefault();
         fetch('http://localhost:3000/crud', {
             method: 'post',
             headers:{
@@ -45,14 +45,16 @@ class AddEditForm extends React.Component{
             .then(response => response.json())
             .then(item => {
                 if (Array.isArray(item)) {
-                    this.props.addItemToState(item[0])
+                    this.props.addItemToState(item[0]);
                     this.props.toggle()
-                }
+                }else {
+                console.log('failure')
+            }
             })
             .catch(err => console.log(err))
-    }
+    };
     submitFormEdit = e => {
-        e.preventDefault()
+        e.preventDefault();
         fetch('http://localhost:3000/crud', {
             method: 'put',
             headers: {
@@ -77,7 +79,7 @@ class AddEditForm extends React.Component{
             .then(item => {
             if (Array.isArray(item)) {
                 // console.log(item[0])
-                this.props.updateState(item[0])
+                this.props.updateState(item[0]);
                 this.props.toggle()
             } else {
             console.log('failure')
@@ -86,11 +88,11 @@ class AddEditForm extends React.Component{
     })
     .catch(err => console.log(err))
 
-}
+};
 componentDidMount() {
         //if item exsists, populate the state with proper data
-    if (this.props.item}{
-    const { id, freezer, chamber, rack, tray, box, sample_type, description, box_label, project, responsible_personel, box_barcode} = this.props.item
+    if (this.props.item){
+    const { id, freezer, chamber, rack, tray, box, sample_type, description, box_label, project, responsible_personel, box_barcode} = this.props.item;
     this.setState({id,freezer, chamber, rack, tray, box, sample_type, description, box_label, project, responsible_personel, box_barcode})
 
 }
@@ -142,7 +144,10 @@ render() {
                 <Label for="box_barcode"> Box Barcode </Label>
                 <Input type="text" name="box_barcode" id="box_barcode" onChange={this.onchange} value={this.state.box_barcode === null ? '': this.state.box_barcode} />
             </FormGroup>
+            <Button> Submit </Button>
+        </Form>
 
     );
 }
         }
+        export default AddEditForm

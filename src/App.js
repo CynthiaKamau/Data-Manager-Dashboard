@@ -1,4 +1,4 @@
-import React, {Component } from 'react';
+import React, {Component } from 'react'
 import  { Container, Row, Col} from 'reactstrap'
 import ModalForm from './Components/Modals/Modal'
 import DataTable from './Components/Tables/DataTable'
@@ -7,7 +7,7 @@ import {CSVLink} from "react-csv"
 class App extends Component{
   state = {
     items: []
-  }
+  };
 
   getItems(){
     fetch('http://localhost:3000/crud')
@@ -20,9 +20,9 @@ class App extends Component{
     this.setState(prevState => ({
       items: [...prevState.items, item]
     }))
-  }
+  };
   updateState = (item) => {
-    const  itemIndex = this.state.items.findIndex(data => data.id === item.id)
+    const  itemIndex = this.state.items.findIndex(data => data.id === item.id);
     const newArray = [
         //destructure all items from beginning to the indexed item
         ...this.state.items.slice(0, itemIndex),
@@ -30,14 +30,14 @@ class App extends Component{
         item,
         //add the rest of the items to the array from the index after the replaced item
         ...this.state.items.slice(itemIndex +1)
-    ]
+    ];
     this.setState({items: newArray})
-  }
+  };
 
-  deleteItemFormState = (id) =>{
-    const updatedItems = this.state.items.filter(item => item.id !== id)
+  deleteItemFormState = (id) => {
+    const updatedItems = this.state.items.filter(item => item.id !== id);
     this.setState({items: updatedItems})
-  }
+  };
   componentDidMount() {
     this.getItems()
   }
