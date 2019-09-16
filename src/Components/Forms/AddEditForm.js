@@ -90,7 +90,7 @@ class AddEditForm extends React.Component{
 
 };
 componentDidMount() {
-        //if item exsists, populate the state with proper data
+        //if item exists, populate the state with proper data
     if (this.props.item){
     const { id, freezer, chamber, rack, tray, box, sample_type, description, box_label, project, responsible_personel, box_barcode} = this.props.item;
     this.setState({id,freezer, chamber, rack, tray, box, sample_type, description, box_label, project, responsible_personel, box_barcode})
@@ -99,51 +99,63 @@ componentDidMount() {
 }
 render() {
     return(
-        <Form onsSubmit={this.props.item ? this.submitFormEdit: this.submitFormAdd}>
+        <Form onSubmit={this.props.item ? this.submitFormEdit: this.submitFormAdd}>
+
             <FormGroup>
                 <Label for="freezer"> Freezer </Label>
-                <Input type="text" name="freezer" id="freezer" onChange={this.onchange} value={this.state.freezer === null ? '': this.state.freezer} />
+                <input type="text" name="freezer" id="freezer" onChange={this.onChange} value={this.state.freezer === null ? '': this.state.freezer} />
             </FormGroup>
+
             <FormGroup>
             <Label for="chamber"> Chamber </Label>
-            <Input type="text" name="chamber" id="freezer" onChange={this.onchange} value={this.state.chamber === null ? '': this.state.chamber} />
+            <input type="text" name="chamber" id="chamber" onChange={this.onChange} value={this.state.chamber === null ? '': this.state.chamber} />
             </FormGroup>
+
             <FormGroup>
                 <Label for="rack"> Rack </Label>
-                <Input type="text" name="rack" id="rack" onChange={this.onchange} value={this.state.rack === null ? '': this.state.rack} />
+                <input type="text" name="rack" id="rack" onChange={this.onChange} value={this.state.rack === null ? '': this.state.rack} />
             </FormGroup>
+
             <FormGroup>
                 <Label for="tray"> Tray </Label>
-                <Input type="text" name="tray" id="tray" onChange={this.onchange} value={this.state.tray === null ? '': this.state.tray} />
+                <input type="text" name="tray" id="tray" onChange={this.onChange} value={this.state.tray === null ? '': this.state.tray} />
             </FormGroup>
+
             <FormGroup>
                 <Label for="box"> Box </Label>
-                <Input type="text" name="rack" id="box" onChange={this.onchange} value={this.state.box === null ? '': this.state.box} />
+                <input type="text" name="box" id="box" onChange={this.onChange} value={this.state.box === null ? '': this.state.box} />
             </FormGroup>
+
             <FormGroup>
                 <Label for="sample_type"> Sample_Type </Label>
-                <Input type="text" name="sample_type" id="sample_type" onChange={this.onchange} value={this.state.sample_type === null ? '': this.state.sample_type} />
+                <input type="text" name="sample_type" id="sample_type" onChange={this.onChange} value={this.state.sample_type === null ? '': this.state.sample_type} />
             </FormGroup>
-            <FormGroup>
+
             <FormGroup>
                 <Label for="description"> Description </Label>
-                <Input type="text" name="description" id="description" onChange={this.onchange} value={this.state.description === null ? '': this.state.description} />
+                <input type="text" name="description" id="description" onChange={this.onChange} value={this.state.description === null ? '': this.state.description} />
             </FormGroup>
+
+            <FormGroup>
                 <Label for="box_label"> Box Label </Label>
-                <Input type="text" name="box_label" id="box_label" onChange={this.onchange} value={this.state.box_label === null ? '': this.state.box_label} />
+                <input type="text" name="box_label" id="box_label" onChange={this.onChange} value={this.state.box_label === null ? '': this.state.box_label} />
             </FormGroup>
+
             <FormGroup>
                 <Label for="project"> Project </Label>
-                <Input type="text" name="project" id="project" onChange={this.onchange} value={this.state.project === null ? '': this.state.project} />
+                <Input type="text" name="project" id="project" onChange={this.onChange} value={this.state.project === null ? '': this.state.project} />
             </FormGroup>
+
             <FormGroup>
                 <Label for="responsible_personel"> Responsible Personel </Label>
-                <Input type="text" name="responsible_personel" id="responsible_personel" onChange={this.onchange} value={this.state.responsible_personel === null ? '': this.state.responsible_personel} />
+                <Input type="text" name="responsible_personel" id="responsible_personel" onChange={this.onChange} value={this.state.responsible_personel === null ? '': this.state.responsible_personel} />
             </FormGroup>
+
             <FormGroup>
                 <Label for="box_barcode"> Box Barcode </Label>
-                <Input type="text" name="box_barcode" id="box_barcode" onChange={this.onchange} value={this.state.box_barcode === null ? '': this.state.box_barcode} />
+                <Input type="text" name="box_barcode" id="box_barcode" onChange={this.onChange} value={this.state.box_barcode === null ? '': this.state.box_barcode}  />
             </FormGroup>
+
             <Button> Submit </Button>
         </Form>
 

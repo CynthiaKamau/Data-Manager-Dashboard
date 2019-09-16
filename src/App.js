@@ -34,7 +34,7 @@ class App extends Component{
     this.setState({items: newArray})
   };
 
-  deleteItemFormState = (id) => {
+  deleteItemFromState = (id) => {
     const updatedItems = this.state.items.filter(item => item.id !== id);
     this.setState({items: updatedItems})
   };
@@ -44,9 +44,10 @@ class App extends Component{
   render() {
     return (
         <Container className="App">
+            <div className="Bodyshape" style={{width :"1800px"}}>
           <Row>
           <Col>
-            <h1 style={{margin: "20px 0"}}> Awesome Database </h1>
+            <h1 style={{margin: "10px 0"}}>  Database </h1>
           </Col>
           </Row>
           <Row>
@@ -69,6 +70,7 @@ class App extends Component{
 
             </Col>
           </Row>
+            </div>
         </Container>
     )
   }

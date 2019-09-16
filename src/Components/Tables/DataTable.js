@@ -37,7 +37,7 @@ class DataTable extends Component{
                     <td>{item.sample_type}</td>
                     <td>{item.description}</td>
                     <td>{item.project}</td>
-                    <td>{item.person_responsible}</td>
+                    <td>{item.responsible_personel}</td>
                     <td>{item.box_barcode}</td>
                     <td>
                     <div style={{width:"110px"}}>

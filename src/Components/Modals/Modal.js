@@ -17,7 +17,7 @@ class ModalForm extends Component {
         }))
     };
     render() {
-        const  closeBtn =<button className="close" onClick={this.toggle}>&time; </button>;
+        const  closeBtn =<button className="close" onClick={this.toggle}>&times; </button>;
 
         const label = this.props.buttonLabel;
 
@@ -60,4 +60,4 @@ class ModalForm extends Component {
 
 
 }
-export default Modal
+export default ModalForm
